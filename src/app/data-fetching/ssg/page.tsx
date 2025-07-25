@@ -5,6 +5,9 @@ const onFetchPosts = async () => {
   const res = await fetch("http://localhost:3000/posts", {
     cache: "force-cache",
   });
+
+if(!res.ok) return 'Fetching Failed';
+
   const posts = await res.json();
 
   return posts;
