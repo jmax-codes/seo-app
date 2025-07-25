@@ -1,25 +1,25 @@
-import { IPosts } from "../ssr/page";
+// import { IPosts } from "../ssr/page";
 
-const onFetchPosts = async () => {
-  const res = await fetch("http://localhost:3000/posts");
+// const onFetchPosts = async () => {
+//   const res = await fetch("http://localhost:3000/posts");
 
-if(!res.ok) return 'Fetching Failed';
+// if(!res.ok) return 'Fetching Failed';
 
 
-  const posts = await res.json();
+//   const posts = await res.json();
 
-  return posts;
-};
+//   return posts;
+// };
 
-export const revalidate = 60;
+// export const revalidate = 60;
 
-export default async function Page() {
-  const posts = await onFetchPosts();
-  return (
-    <>
-      {posts?.map((post: IPosts, index: number) => {
-        return <h1 key={index}>{post?.title}</h1>;
-      })}
-    </>
-  );
-}
+// export default async function Page() {
+//   const posts = await onFetchPosts();
+//   return (
+//     <>
+//       {posts?.map((post: IPosts, index: number) => {
+//         return <h1 key={index}>{post?.title}</h1>;
+//       })}
+//     </>
+//   );
+// }
